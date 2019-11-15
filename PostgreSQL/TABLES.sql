@@ -1,84 +1,88 @@
-CREATE TABLE Ingeniero(
-	Nombre Varchar(50),
-	Telefono INT,
-	Codigo INT NOT NULL,
-	Especialidad Varchar(50),
-	Cedula INT ,
-	PRIMARY KEY (Codigo)
+CREATE TABLE Engineer(
+	Name Varchar(50),
+	Phone INT,
+	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
+	Specialty INT,
+	Identification INT ,
+	PRIMARY KEY (ID)
 )
-CREATE TABLE Especialidad(
-	Descripcion VARCHAR(50)
+CREATE TABLE Specialty(
+	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
+	Description VARCHAR(50),
+	UNIQUE(ID)
 )
-CREATE TABLE Cliente(
-	Nombre VarChar(50),
-	Telefono INT,
-	Cedula INT NOT NULL,
+CREATE TABLE Client(
+	Name VarChar(50),
+	Phone INT,
+	Identification INT NOT NULL,
 	UserName VarChar(50) NOT NULL,
 	UNIQUE(UserName),
 	PRIMARY KEY(UserName)
 )
-CREATE TABLE Empleados(
-	Nombre Varchar(50),
-	Cedula INT NOT NULL,
-	Telefono INT,
-	PagoHora INT,
-	Proyecto INT,
-	Codigo INT,
-	UNIQUE(Cedula),
-	PRIMARY KEY (Codigo)
+CREATE TABLE Employee(
+	Name Varchar(50),
+	Identification INT NOT NULL,
+	Phone INT,
+	HourPrice INT,
+	Proyect INT,
+	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
+	PRIMARY KEY (ID)
 )
-CREATE TABLE Materiales(
-	Nombre Varchar(50),
-	Codigo INT NOT NULL,
-	PrecioUnitario INT,
-	PRIMARY KEY(Codigo)
+CREATE TABLE Materials(
+	Name Varchar(50),
+	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL ,
+	UnitPrice INT,
+	PRIMARY KEY(ID)
 )
-CREATE TABLE Etapa(
-	Codigo INT NOT NULL,
-	Descripcion VARCHAR(50),
-	PRIMARY KEY (Codigo)
+
+CREATE TABLE Stage(
+	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
+	Description VARCHAR(50),
+	PRIMARY KEY (ID)
 )
-CREATE TABLE Obra(
-	Nombre VARCHAR(50),
-	Ubicacion INT,
-	Habitaciones INT,
-	Baños INT,
-	Pisos INT,
-	TamañoLote INT,
-	TamañoObra INT,
-	Dueño VARCHAR(50),
-	Proyecto INT,
-	Codigo INT,
-	Materiales INT,
-	PRIMARY KEY(Codigo)
+CREATE TABLE Build(
+	Name VARCHAR(50),
+	location INT,
+	Rooms INT,
+	Bathroms INT,
+	Floor INT,
+	GroundSize INT,
+	BuildSize INT,
+	Owner VARCHAR(50),
+	Proyect INT,
+	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL ,
+	Materials INT,
+	PRIMARY KEY(ID)
 )
-CREATE TABLE Proyecto(
-	Codigo INT,
-	Empleado INT,
-	Horas INT,
-	PRIMARY KEY(Codigo)
+CREATE TABLE Proyect(
+	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
+	Employee INT,
+	Hours INT,
+	PRIMARY KEY(ID)
 )
-CREATE TABLE RegistroMateriales(
-	Costo INT,
-	Cantidad INT,
+
+CREATE TABLE MaterialRegistry(
+	Price INT,
+	Quantity INT,
 	Material INT,
-	Obra INT,
-	Etapa VarCHAR(50),
-	Codigo INT,
-	Primary KEY (Codigo)
+	Build INT,
+	Stage INT,
+	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
+	Primary KEY (ID)
 )
-CREATE TABLE Factura(
-	Materiales INT,
-	Foto VARCHAR(200),
-	Numero INT,
-	Proyecto INT,
-	Proveedor VARCHAR(50),
-	PRIMARY KEY(Numero)
+CREATE TABLE Bills(
+	Materials INT,
+	Photo VARCHAR(200),
+	Number INT GENERATED ALWAYS AS IDENTITY NOT NULL,
+	Proyect INT,
+	Provider VARCHAR(50),
+	PRIMARY KEY(Number)
 )
-CREATE TABLE Ubicacion(
-	Provincia VARCHAR(50),
-	Distrito VARCHAR(50),
+
+CREATE TABLE Location(
+	Province VARCHAR(50),
+	District VARCHAR(50),
 	Canton VARCHAR(50),
-	Codigo INT,
-	PRIMARY KEY (Codigo)
+	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
+	PRIMARY KEY (ID)
 )
