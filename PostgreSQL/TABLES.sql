@@ -58,6 +58,10 @@ CREATE TABLE Proyect(
 	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
 	Employee INT,
 	Hours INT,
+	StageID INT,
+	Stage VARCHAR(50),
+	Begin DATE,
+	ENDS DATE,
 	PRIMARY KEY(ID)
 )
 
@@ -66,6 +70,7 @@ CREATE TABLE MaterialRegistry(
 	Quantity INT,
 	Material INT,
 	Build INT,
+	Name VARCHAR(50),
 	Stage INT,
 	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
 	Primary KEY (ID)
@@ -75,6 +80,7 @@ CREATE TABLE Bills(
 	Photo VARCHAR(200),
 	Number INT GENERATED ALWAYS AS IDENTITY NOT NULL,
 	Proyect INT,
+	Total INT,
 	Provider VARCHAR(50),
 	PRIMARY KEY(Number)
 )
