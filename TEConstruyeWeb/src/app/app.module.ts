@@ -14,6 +14,14 @@ import { AssignmenthoursComponent } from './assignmenthours/assignmenthours.comp
 import { AssignmentprojectexpensesComponent } from './assignmentprojectexpenses/assignmentprojectexpenses.component';
 import { WorkrecordComponent } from './workrecord/workrecord.component';
 import { AssignmentstagesComponent } from './assignmentstages/assignmentstages.component';
+import { WelcomeadminComponent } from './welcomeadmin/welcomeadmin.component';
+import { WelcomeeaComponent } from './welcomeea/welcomeea.component';
+import { AssignmentmaterialComponent } from './assignmentmaterial/assignmentmaterial.component';
+import { GenerationbudgetComponent } from './generationbudget/generationbudget.component';
+import { GeneratebudgetComponent } from './generatebudget/generatebudget.component';
+import { GeneratepayrollComponent } from './generatepayroll/generatepayroll.component';
+import { ReportexpenseComponent } from './reportexpense/reportexpense.component';
+import { ReportstatusComponent } from './reportstatus/reportstatus.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +37,14 @@ import { AssignmentstagesComponent } from './assignmentstages/assignmentstages.c
     AssignmentprojectexpensesComponent,
     WorkrecordComponent,
     AssignmentstagesComponent,
+    WelcomeadminComponent,
+    WelcomeeaComponent,
+    AssignmentmaterialComponent,
+    GenerationbudgetComponent,
+    GeneratebudgetComponent,
+    GeneratepayrollComponent,
+    ReportexpenseComponent,
+    ReportstatusComponent,
   ],
   imports: [
     BrowserModule,

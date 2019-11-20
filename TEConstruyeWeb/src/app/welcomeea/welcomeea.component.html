@@ -1,0 +1,32 @@
+<!--/ Nav Star /-->
+<nav class="navbar navbar-default navbar-trans navbar-expand-lg ">
+    <div class="container">
+        <a class="navbar-brand text-brand" routerLink="/welcomeea">TEC<span class="color-b">onstruye</span></a>
+        <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Registries
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" routerLink="/registerstages">Stages</a>
+                        <a class="dropdown-item" routerLink="/workrecord">Work</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Assignments
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" routerLink="/assignmentstages">Stages</a>
+                        <a class="dropdown-item" routerLink="/assignmentmaterial">Materials</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/generationbudget">Budget generation</a>
+                </li>
+            </ul>
+        </div>
+        <button type="button" class="btn btn-b-n navbar-toggle-box-collapse d-none d-md-block" (click) ="this.loginservice.logout()" >Cerrar sesión</button>
+    </div>
+</nav>
