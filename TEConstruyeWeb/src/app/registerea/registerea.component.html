@@ -1,1 +1,140 @@
 <app-welcomeadmin>s</app-welcomeadmin>
+
+<div class="container mt-3">
+    <h1 class="display-4 text-center">Registry of Engineers and Architects</h1>
+</div>
+
+<div class="container mt-3">
+    <!-- Ecabezado de tabla -->
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-dark bg-primary">
+                <a class="navbar-brand text-light">Tabla de profesionales</a>
+                <form class="form-inline">
+                    <button type="button" (click)="show = 'modal'" data-toggle="modal" data-target="#agregar" class="btn">
+                        <img src="https://image.flaticon.com/icons/svg/148/148764.svg" alt="add-button" width="30"/>
+                    </button>
+                </form>
+            </nav>
+        </div>
+    </div>
+    <!-- Tabla -->
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Identification</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Speciality</th>
+                        <th scope="col">Phone</th>
+                        <th scope="col">Code</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of profesionales">
+                        <th scope="row" class="align-middle">{{ data.cedula }}</th>
+                        <th scope="row" class="align-middle">{{data.nombre + ' ' + data.primerapellido + ' ' + data.segundoapellido}}</th>
+                        <th scope="row" class="align-middle">{{ data.especialidad }}</th>
+                        <th scope="row" class="align-middle">{{ data.telefono }}</th>
+                        <th scope="row" class="align-middle">{{ data.codigo }}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Agregar profesional-->
+<div class="modal fade" data-keyboard="false" data-backdrop="static" id="agregar" tabindex="-1" role="dialog" aria-labelledby="agregarLabel1" aria-hidden="true" *ngIf="show == 'modal'">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="agregarLabel">Add professional</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputName">Name</label>
+                            <input required class="form-control" type="text" placeholder="Nombre" maxlength="20"/>
+                            <!--<input required class="form-control" ngModel id="name" name="name" #name="ngModel" type="text" placeholder="Nombre" maxlength="20"/>
+                            <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+                                Debe ingresar un nombre válido.
+                            </div> -->
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputLastName1">First Lastname</label>
+                            <input required class="form-control" type="text" placeholder="Primer apellido" maxlength="20"/>
+                            <!--<input required class="form-control" ngModel id="lastName" name="lastName" #lastName="ngModel" type="text" placeholder="Primer apellido" maxlength="20"/>
+                            <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">
+                                Debe ingresar un apellido válido.
+                            </div> -->
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputLastName2">Second Lastname</label>
+                            <input required class="form-control" type="text" placeholder="Segundo apellido" maxlength="20"/>
+                            <!--<input required class="form-control" ngModel id="lastName2" name="lastName2" #lastName2="ngModel" type="text" placeholder="Segundo apellido" maxlength="20"/>
+                            <div class="alert alert-danger" *ngIf="lastName2.touched && !lastName2.valid">
+                                Debe ingresar un apellido válido.
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputName">Identification</label>
+                            <input required class="form-control" type="number" placeholder="Cédula" pattern="[0-9]{9}"/>
+                            <!--<input required class="form-control" ngModel id="id" name="id" #id="ngModel" type="number" placeholder="Cédula" pattern="[0-9]{9}"/>
+                            <div class="alert alert-danger" *ngIf="id.touched && !id.valid">
+                                Debe ingresar una cédula válida.
+                            </div>
+                            <div class="alert alert-danger" *ngIf="id.touched && keyConstraint(id.control?.value)">
+                                La cédula ya existe.
+                            </div> -->
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputLastName1">Code</label>
+                            <input required class="form-control" type="text" placeholder="Código" maxlength="20"/>
+                            <!--<input required class="form-control" ngModel id="code" name="code" #code="ngModel" type="text" placeholder="Código" maxlength="20"/>
+                            <div class="alert alert-danger" *ngIf="code.touched && !code.valid">
+                                Debe ingresar un código válido.
+                            </div> -->
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputPhone">Phone</label>
+                            <input required class="form-control" type="number" placeholder="Teléfono" pattern="[0-9]{8}"/>
+                            <!--<input required class="form-control" ngModel id="phone" name="phone" #phone="ngModel" type="number" placeholder="Teléfono" pattern="[0-9]{8}"/>
+                            <div class="alert alert-danger" *ngIf="phone.touched && !phone.valid">
+                                Debe ingresar un teléfono válido.
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label for="inputArea">Speciality</label>
+                            <!--<select required ngModel id="area" name="area" #area="ngModel" class="form-control">
+                                <option>Civil</option>
+                                <option>Construction</option>
+                                <option>Eléctric</option>
+                            </select> -->
+                            <!-- <div class="alert alert-danger" *ngIf="area.touched && !area.valid">
+                                Debe ingresar una especialidad.
+                            </div> -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="show = home">
+                    Close
+                </button>
+                <button type="button" class="btn btn-primary bg-success" [disabled]="!name.valid || !lastName.valid || !lastName2.valid || !id.valid || keyConstraint(id.control?.value) || !code.valid || !phone.valid || !area.valid" (click)="submit(name.control?.value,lastName.control?.value,lastName2.control?.value,id.control?.value,code.control?.value,phone.control?.value,area.control?.value);show = 'home'" data-dismiss="modal">
+                    Save
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

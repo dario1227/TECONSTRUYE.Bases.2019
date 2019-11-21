@@ -1,6 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+//import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
+//import { RxReactiveFormsModule } from "@rxweb/reactive-form-validators";
+
 import { AssignmenthoursComponent } from './assignmenthours/assignmenthours.component';
 import { AssignmentmaterialComponent } from './assignmentmaterial/assignmentmaterial.component';
 import { AssignmentprojectexpensesComponent } from './assignmentprojectexpenses/assignmentprojectexpenses.component';
