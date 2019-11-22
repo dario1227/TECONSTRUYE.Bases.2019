@@ -1,0 +1,99 @@
+<app-welcomeea></app-welcomeea>
+
+<div class="container mt-3">
+    <h1 class="display-4 text-center" *ngIf="!selected">Material Assignment</h1>
+</div>
+      
+
+<div class="container d-print-none mb-3">
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" data-toggle="modal" data-target="#agregar" class="btn btn-success btn-lg btn-block">Assign material</button>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-3 mb-2" *ngIf="!selected">
+    <div class="row mt-3" *ngFor="let etapa of etapas">
+        <h3>{{ etapa.Etapa }}</h3>
+        <div class="col-md-12">
+            <div class="container mt-3">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Material</th>
+                            <th scope="col" class="d-print-none">Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let material of etapa.Materiales">
+                            <th scope="row" class="align-middle">{{ material.Material }}</th>
+                            <th scope="row" class="align-middle">{{ material.Cantidad }}</th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+      
+<!-- Agregar material-->
+
+<div class="modal fade" data-keyboard="false" data-backdrop="static" id="agregar" tabindex="-1" role="dialog" aria-labelledby="agregarLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="agregarLabel">Assign material</h5>
+            </div>
+            <div class="modal-body">
+                <!--<form [formGroup]="materialesForm">
+                    Value : {{ materialesForm.value | json }}
+                    <hr /> -->
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputName">Etapa</label>
+                            <!--<select class="form-control" placeholder="Etapa" formControlName="Etapa">
+                                <option></option>
+                                <option *ngFor="let etapa of etapas">
+                                    {{ etapa.Etapa }}
+                                </option>
+                            </select>
+                            <div class="alert alert-danger" *ngIf="Etapa.touched && !Etapa.valid">
+                                Debe ingresar una etapa.
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputName">Material</label>
+                            <!--<select class="form-control" placeholder="Material" formControlName="Material">
+                                <option></option>
+                                <option *ngFor="let material of materiales">
+                                    {{ material.Nombre }}
+                                </option>
+                            </select>
+                            <div class="alert alert-danger" *ngIf="Material.touched && !Material.valid" >
+                                Debe ingresar un material.
+                            </div> -->
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputName">Cantidad</label>
+                            <input class="form-control" type="number" placeholder="Cantidad" formControlName="Cantidad"/>
+                            <!--<div class="alert alert-danger" *ngIf="Cantidad.touched && !Cantidad.valid">
+                                Debe ingresar una cantidad.
+                            </div> -->
+                        </div>
+                    </div>
+                <!--</form> -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-success" (click)="submit()" [disabled]="!materialesForm.valid">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

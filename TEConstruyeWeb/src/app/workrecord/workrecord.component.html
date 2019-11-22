@@ -1,0 +1,278 @@
+<app-welcomeea></app-welcomeea>
+
+<div class="container mt-3">
+    <h1 class="display-4 text-center" *ngIf="!selected">
+        Registro de obra
+    </h1>
+</div>
+
+<div class="container mt-3"></div>
+<div class="container mt-3">
+    <!-- Ecabezado de tabla -->
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-dark bg-primary">
+                <a class="navbar-brand text-light">Tabla de proyectos</a>
+                <form class="form-inline">
+                    <button type="button" (click)="show = 'modal'; profesionalesTemp = profesionales" data-toggle="modal" data-target="#agregar" class="btn">
+                        <img src="https://image.flaticon.com/icons/svg/148/148764.svg" alt="add-button" width="30"/>
+                    </button>
+                </form>
+            </nav>
+        </div>
+    </div>
+    <!-- Tabla -->
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th style scope="col">Id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Rooms</th>
+                        <th scope="col">Bathrooms</th>
+                        <th scope="col">Levels</th>
+                        <th scope="col">Cons mts</th>
+                        <th scope="col">Meters of land</th>
+                        <th scope="col">Client</th>
+                        <th scope="col">Managers</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of proyectos">
+                        <th scope="row" class="align-middle">{{ data.Id }}</th>
+                        <th scope="row" class="align-middle">{{ data.Nombre }}</th>
+                        <th scope="row" class="align-middle">{{ data.Provincia + ', ' + data.Canton + ', ' + data.Distrito }}</th>
+                        <th scope="row" class="align-middle">{{ data.Habitaciones }}</th>
+                        <th scope="row" class="align-middle">{{ data.Banos }}</th>
+                        <th scope="row" class="align-middle">{{ data.Niveles }}</th>
+                        <th scope="row" class="align-middle">{{ data.MetrosConstruccion }}</th>
+                        <th scope="row" class="align-middle">{{ data.MetrosPropiedad }}</th>
+                        <th scope="row" class="align-middle">{{ data.NombreCliente + ' ' + data.ApellidoCliente }}</th>
+                        <td *ngFor="let encargado of data.Encargados" class="align-middle d-print-none">{{encargado.Nombre + ' ' + encargado.Apellido + ' (' + encargado.Especialidad + ')'}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Agregar obra -->
+<div class="modal fade" data-keyboard="false" data-backdrop="static" id="agregar" tabindex="-1" role="dialog" aria-labelledby="agregarLabel1" aria-hidden="true" *ngIf="show == 'modal'" >
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="agregarLabel">Agregar obra</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!--<form [formGroup]="proyectosForm">
+                    Value: {{ proyectosForm.value | json }} <hr /> -->
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputName">Name</label>
+                            <input class="form-control" placeholder="Nombre" formControlName="Nombre"/>
+                            <!--<input class="form-control" placeholder="Nombre" formControlName="Nombre"/>
+                            <div class="alert alert-danger" *ngIf="Nombre.touched && !Nombre.valid">
+                                Debe ingresar un nombre válido.
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputName">Description</label>
+                            <input class="form-control" placeholder="Descripcion" formControlName="Descripcion"/>
+                            <!--<input class="form-control" placeholder="Descripcion" formControlName="Descripcion"/>
+                            <div class="alert alert-danger" *ngIf="Descripcion.touched && !Descripcion.valid">
+                                Debe ingresar una descripción válida.
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputName">Provincia</label>
+                            <!--<select class="form-control" placeholder="Provincia" formControlName="Provincia" (change)="setProvinciaIndex($event.target.selectedIndex)">
+                                <option></option>
+                                <option *ngFor="let ubicacion of ubicaciones">
+                                    {{ ubicacion.Provincia }}
+                                </option>
+                            </select>
+                            <div class="alert alert-danger" *ngIf="Provincia.touched && !Provincia.valid">
+                                Debe ingresar una provincia.
+                            </div> -->
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputName">Cantón</label>
+                            <!-- <select class="form-control" placeholder="Cantón" formControlName="Canton" (change)="setCantonIndex($event.target.selectedIndex)">
+                                <option></option>
+                                <option *ngFor="let cantones of ubicaciones[provinciaIndex].Cantones"> {{ cantones.Canton }}</option>
+                            </select>
+                            <div class="alert alert-danger" *ngIf="Canton.touched && !Canton.valid">
+                                Debe ingresar un cantón.
+                            </div> -->
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputName">Distrito</label>
+                            <!-- <select class="form-control" placeholder="Distrito" formControlName="Distrito">
+                                <option></option>
+                                <option *ngFor="let distritos of ubicaciones[provinciaIndex].Cantones[cantonIndex].Distritos">{{ distritos.Distrito }}</option>
+                            </select>
+                            <div class="alert alert-danger" *ngIf="Distrito.touched && !Distrito.valid">
+                                Debe ingresar un distrito.
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputName">Rooms</label>
+                            <input type="number" class="form-control" placeholder="Habitaciones" formControlName="Habitaciones"/>
+                            <!--<input type="number" class="form-control" placeholder="Habitaciones" formControlName="Habitaciones"/>
+                            <div class="alert alert-danger" *ngIf="Habitaciones.touched && !Habitaciones.valid" >
+                                Debe ingresar una cantidad válida.
+                            </div> -->
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputName">Bathrooms</label>
+                            <input type="number" class="form-control" placeholder="Baños" formControlName="Banos"/>
+                            <!--<input type="number" class="form-control" placeholder="Baños" formControlName="Banos"/>
+                            <div class="alert alert-danger" *ngIf="Banos.touched && !Banos.valid">
+                                Debe ingresar una cantidad válida.
+                            </div> -->
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputName">Parking</label>
+                            <input type="number" class="form-control" placeholder="Parqueos" formControlName="Parqueos"/>
+                            <!--<div class="alert alert-danger" *ngIf="Parqueos.touched && !Parqueos.valid">
+                                Debe ingresar una cantidad válida.
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputName">Construction mts</label>
+                            <input type="number" class="form-control" placeholder="Metros de construcción" formControlName="MetrosConstruccion"/>
+                            <!--<input type="number" class="form-control" placeholder="Metros de construcción" formControlName="MetrosConstruccion"/>
+                            <div class="alert alert-danger" *ngIf="MetrosConstruccion.touched && !MetrosConstruccion.valid">
+                                Debe ingresar una cantidad válida.
+                            </div> -->
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputName">Meters land</label>
+                            <input type="number" class="form-control" placeholder="Metros de propiedad" formControlName="MetrosPropiedad"/>
+                            <!--<input type="number" class="form-control" placeholder="Metros de propiedad" formControlName="MetrosPropiedad"/>
+                            <div class="alert alert-danger" *ngIf="MetrosPropiedad.touched && !MetrosPropiedad.valid">
+                                Debe ingresar una cantidad válida.
+                            </div> -->
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputName">Levels</label>
+                            <input type="number" class="form-control"placeholder="Pisos" formControlName="Pisos"/>
+                            <!--<input type="number" class="form-control"placeholder="Pisos" formControlName="Pisos"/>
+                            <div class="alert alert-danger" *ngIf="Pisos.touched && !Pisos.valid">
+                                Debe ingresar una cantidad válida.
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputName">Gym</label>
+                            <!-- <select class="form-control" placeholder="Gimnasio" formControlName="Gimnasio">
+                                <option></option>
+                                <option [value]="1">Sí</option>
+                                <option [value]="0">No</option>
+                            </select>
+                            <div class="alert alert-danger" *ngIf="Gimnasio.touched && !Gimnasio.valid">
+                                Debe indicar si la propiedad tiene gimnasio.
+                            </div> -->
+                        </div>
+                        <div class="form-group col-md-4"><label for="inputName">Parking for visitors</label>
+                            <!-- <select class="form-control" placeholder="Parqueo de visitas" formControlName="ParqueoVisitas">
+                                <option></option>
+                                <option [value]="1">Sí</option>
+                                <option [value]="0">No</option>
+                            </select>
+                            <div class="alert alert-danger" *ngIf="ParqueoVisitas.touched && !ParqueoVisitas.valid">
+                                Debe indicar si la propiedad tiene parqueo para visitas.
+                            </div> -->
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputName">Pool</label>
+                            <!--<select class="form-control" placeholder="Piscina" formControlName="Piscina">
+                                <option></option>
+                                <option [value]="1">Sí</option>
+                                <option [value]="0">No</option>
+                            </select>
+                            <div class="alert alert-danger" *ngIf="Piscina.touched && !Piscina.valid">
+                                Debe indicar si la propiedad tiene piscina.
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputName">Floor type</label>
+                            <input class="form-control" placeholder="Tipo de piso" formControlName="TipoPiso"/>
+                            <!--<input class="form-control" placeholder="Tipo de piso" formControlName="TipoPiso"/>
+                            <div class="alert alert-danger" *ngIf="TipoPiso.touched && !TipoPiso.valid">
+                                Debe indicar un tipo de piso válido.
+                            </div> -->
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputName">Cliente</label>
+                            <!-- <select class="form-control" placeholder="Cliente" formControlName="ClienteId">
+                                <option></option>
+                                <option *ngFor="let cliente of clientes; let i = index" [value]="clientes[i].Cedula">
+                                    {{cliente.Nombre + ' ' + cliente.PrimerApellido + ' (' + cliente.Cedula + ')'}}
+                                </option>
+                            </select>
+                            <div class="alert alert-danger" *ngIf="ClienteId.touched && !ClienteId.valid">
+                                Debe asociar un cliente a esta propiedad.</div>
+                            </div> -->
+                        </div>
+                    <!--</form>
+                        <form [formGroup]="encargadosForm">
+                            Value : {{ encargadosForm.value | json }}<hr />
+                            <div class="form-row">
+                            <div class="form-group col-md-12">
+                                <button type="button" class="btn btn-primary" (click)="addEncargado(); log(encargadosForm.value.Encargados)">
+                                    Agregar encargado
+                                </button>
+                            </div>
+                        </div>
+                        <div formArrayName="Encargados">
+                            <label for="inputName">Encargados: </label>
+                            <div *ngFor="let encargado of getEncargadosForm.controls; let i = index"[formGroupName]="i">
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <select class="form-control" placeholder="Encargado" formControlName="Cedula">
+                                            <option></option>
+                                            <option *ngFor="let profesional of profesionalesTemp" [value]="profesional.Cedula">
+                                                {{profesional.Nombre + ' ' + profesional.PrimerApellido + ' ' + profesional.SegundoApellido + ' (' + profesional.Cedula +')'}}
+                                            </option>
+                                        </select>
+                                        <div class="alert alert-danger" *ngIf="!encargado.valid && encargado.touched">
+                                            Encargado inválido.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="alert alert-warning" *ngIf=" !getEncargadosForm.valid && getEncargadosForm.errors?.required">
+                            {{ log(getEncargadosForm) }}
+                            Debe ingresar al menos un encargado.
+                        </div>
+                    </form> -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="show = home; close()">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-success" (click)="submit()" [disabled]="!getEncargadosForm.valid || !proyectosForm.valid">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>

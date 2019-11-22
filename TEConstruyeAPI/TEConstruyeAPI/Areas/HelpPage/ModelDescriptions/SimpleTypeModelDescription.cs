@@ -1,6 +1,0 @@
-namespace TEConstruyeAPI.Areas.HelpPage.ModelDescriptions
-{
-    public class SimpleTypeModelDescription : ModelDescription
-    {
-    }
-}
