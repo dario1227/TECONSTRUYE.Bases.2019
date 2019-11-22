@@ -1,0 +1,47 @@
+GET SPECIALTIES
+
+http://localhost:4800/api/specialty/getspecialty
+
+
+GET LOCAL
+http://localhost:4800/api/location/getlocation
+
+
+
+GET STAGES
+http://localhost:4800/api/stage/getstage
+
+GET CLIENT
+http://localhost:4800/api/client/getclient
+
+POST CLIENT
+{
+	"name":"Marco R",
+	"phone":"88213456",
+	"identification":"114566213",
+	"username":"MarcoProf"
+}
+http://localhost:4800/api/client/postclient
+
+GET PROJECT
+http://localhost:4800/api/project/getproject
+POST
+{
+	"name":"Marco R",
+	"hours":"88",
+	"stage":"",
+	"begin":"12-09-2018",
+	"ends":"21-04-2019"
+}
+
+
+STAGES
+GET
+
+
+
+
+
+
+
+
