@@ -1,0 +1,22 @@
+[{
+    "Nombre": "Pedro",
+    "PrimerApellido": "Perico",
+    "SegundoApellido": "Los Palotes",
+    "Cedula": 101110111,
+    "Telefono": 70996273
+  },
+  {
+    "Nombre": "Fulanito",
+    "PrimerApellido": "Rojas",
+    "SegundoApellido": "Medina",
+    "Cedula": 106670777,
+    "Telefono": 76335728
+  },
+  {
+    "Nombre": "Menganito",
+    "PrimerApellido": "Díaz",
+    "SegundoApellido": "Mendoza",
+    "Cedula": 303330222,
+    "Telefono": 88662099
+  }
+]

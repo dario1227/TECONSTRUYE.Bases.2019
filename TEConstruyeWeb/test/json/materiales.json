@@ -1,0 +1,16 @@
+[{
+    "Nombre": "MARTILLO TRUPER",
+    "Codigo": 1,
+    "PrecioUnitario": 7000
+  },
+  {
+    "Nombre": "INODORO AMERICAN STANDARD",
+    "Codigo": 2,
+    "PrecioUnitario": 150000
+  },
+  {
+    "Nombre": "CINTA MÉTRICA TRUPER",
+    "Codigo": 3,
+    "PrecioUnitario": 5000
+  }
+]

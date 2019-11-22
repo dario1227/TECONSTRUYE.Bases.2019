@@ -1,19 +1,23 @@
 <app-welcomeea></app-welcomeea>
 
-<div class="container mt-3">
+<!--<div class="container mt-3">
     <h1 class="display-4 text-center" *ngIf="!selected">Material Assignment</h1>
-</div>
+</div> -->
+
+<div class="container mt-3">
+        <h1 class="display-4 text-center">Material Assignment</h1>
+    </div>
       
 
-<div class="container d-print-none mb-3">
+<!--<div class="container d-print-none mb-3">
     <div class="row">
         <div class="col-md-12">
             <button type="button" data-toggle="modal" data-target="#agregar" class="btn btn-success btn-lg btn-block">Assign material</button>
         </div>
     </div>
-</div>
+</div> -->
 
-<div class="container mt-3 mb-2" *ngIf="!selected">
+<!--<div class="container mt-3 mb-2" *ngIf="!selected">
     <div class="row mt-3" *ngFor="let etapa of etapas">
         <h3>{{ etapa.Etapa }}</h3>
         <div class="col-md-12">
@@ -35,7 +39,86 @@
             </div>
         </div>
     </div>
+</div> -->
+
+
+
+<div class="container mt-3">
+    <!-- Ecabezado de tabla -->
+    <!--<div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-dark bg-primary">
+                <a class="navbar-brand text-light">Tabla de materiales</a>
+                <form class="form-inline">
+                    <button type="button" (click)="show = 'modal'" data-toggle="modal" data-target="#agregar" class="btn">
+                        <img src="https://image.flaticon.com/icons/svg/148/148764.svg" alt="add-button" width="30" />
+                    </button>
+                </form>
+            </nav>
+        </div>
+    </div> -->
+
+    <form class="form-inline">
+        <button type="button" (click)="show = 'modal'" data-toggle="modal" data-target="#agregar" align="right" class="btn">
+            <img src="https://image.flaticon.com/icons/svg/148/148764.svg" alt="add-button" width="30" />
+        </button>
+    </form>
+    
+    <!-- Tabla -->
+    <!--<div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Stage</th>
+                        <th scope="col">Beginning</th>
+                        <th scope="col">Ending</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let etapa of etapasProyecto">
+                        <th scope="row" class="align-middle">{{ etapa.etapa }}</th>
+                        <th scope="row" class="align-middle">
+                            {{ etapa.fechainicio }}
+                        </th>
+                        <th scope="row" class="align-middle">{{ etapa.fechafinal }}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> -->
+
+
+
+    <div class="container mt-3 mb-2" *ngIf="!selected">
+        <div class="row mt-3" *ngFor="let etapa of etapas">
+            <h3>{{ etapa.Etapa }}</h3>
+            <div class="col-md-12">
+                <div class="container mt-3">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Material</th>
+                                <th scope="col" class="d-print-none">Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let material of etapa.Materiales">
+                                <th scope="row" class="align-middle">{{ material.Material }}</th>
+                                <th scope="row" class="align-middle">{{ material.Cantidad }}</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+
+
 </div>
+
+
       
 <!-- Agregar material-->
 
@@ -52,7 +135,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="inputName">Etapa</label>
-                            <!--<select class="form-control" placeholder="Etapa" formControlName="Etapa">
+                            <select class="form-control" placeholder="Etapa" formControlName="Etapa">
                                 <option></option>
                                 <option *ngFor="let etapa of etapas">
                                     {{ etapa.Etapa }}
@@ -60,13 +143,13 @@
                             </select>
                             <div class="alert alert-danger" *ngIf="Etapa.touched && !Etapa.valid">
                                 Debe ingresar una etapa.
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputName">Material</label>
-                            <!--<select class="form-control" placeholder="Material" formControlName="Material">
+                            <select class="form-control" placeholder="Material" formControlName="Material">
                                 <option></option>
                                 <option *ngFor="let material of materiales">
                                     {{ material.Nombre }}
@@ -74,14 +157,14 @@
                             </select>
                             <div class="alert alert-danger" *ngIf="Material.touched && !Material.valid" >
                                 Debe ingresar un material.
-                            </div> -->
+                            </div>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputName">Cantidad</label>
                             <input class="form-control" type="number" placeholder="Cantidad" formControlName="Cantidad"/>
-                            <!--<div class="alert alert-danger" *ngIf="Cantidad.touched && !Cantidad.valid">
+                            <div class="alert alert-danger" *ngIf="Cantidad.touched && !Cantidad.valid">
                                 Debe ingresar una cantidad.
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                 <!--</form> -->

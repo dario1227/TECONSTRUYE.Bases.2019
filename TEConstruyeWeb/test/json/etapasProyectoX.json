@@ -1,0 +1,18 @@
+[{
+    "Etapa": "Trabajo preliminar",
+    "FechaInicio": "2020-01-04",
+    "FechaFin": "2020-01-20"
+  },
+  {
+    "Etapa": "Cimientos",
+    "FechaInicio": "2020-01-20",
+    "FechaFin": "2020-02-02"
+
+  },
+  {
+    "Etapa": "Paredes",
+    "FechaInicio": "2020-02-02",
+    "FechaFin": "2020-02-15"
+
+  }
+]

@@ -1,0 +1,21 @@
+[{
+    "Etapa": "Cimientos",
+    "Presupuestado": 110000,
+    "Gastado": 90000
+  },
+  {
+    "Etapa": "Pisos",
+    "Presupuestado": 120000,
+    "Gastado": 140000
+  },
+  {
+    "Etapa": "Paredes",
+    "Presupuestado": 200000,
+    "Gastado": 180000
+  },
+  {
+    "Etapa": "Ventanas",
+    "Presupuestado": 300000,
+    "Gastado": 310000
+  }
+]

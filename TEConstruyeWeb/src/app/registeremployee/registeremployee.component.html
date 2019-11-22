@@ -8,7 +8,7 @@
     <!-- Ecabezado de tabla -->
     <div class="row">
         <div class="col-md-12">
-            <nav class="navbar navbar-dark bg-primary">
+            <nav class="navbar navbar-light" style="background-color: #00C853;">
                 <a class="navbar-brand text-light">Tabla de empleados</a>
                 <form class="form-inline">
                     <button type="button" (click)="show = 'modal'" data-toggle="modal" data-target="#agregar" class="btn">
@@ -59,55 +59,55 @@
                         <div class="form-group col-md-4">
                             <label for="inputName">Name</label>
                             <input required class="form-control" type="text" placeholder="Nombre" maxlength="20"/>
-                            <!--<input required class="form-control" ngModel id="name" name="name" #name="ngModel" type="text" placeholder="Nombre" maxlength="20"/>
+                            <!--<input required class="form-control" ngModel id="name" name="name" #name="ngModel" type="text" placeholder="Nombre" maxlength="20"/> -->
                             <div class="alert alert-danger" *ngIf="name.touched && !name.valid"> 
                                 Debe ingresar un nombre válido.
-                            </div> -->
+                            </div>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputLastName1">First Lastname</label>
                             <input required class="form-control" type="text" placeholder="Primer apellido" maxlength="20"/>
-                            <!--<input required class="form-control" ngModel id="lastName" name="lastName" #lastName="ngModel" type="text" placeholder="Primer apellido" maxlength="20"/>
+                            <!--<input required class="form-control" ngModel id="lastName" name="lastName" #lastName="ngModel" type="text" placeholder="Primer apellido" maxlength="20"/> -->
                             <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">
                                 Debe ingresar un apellido válido.
-                            </div> -->
+                            </div>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputLastName2">Second Lastname</label>
                             <input required class="form-control" type="text" placeholder="Segundo apellido" maxlength="20"/>
-                            <!--<input required class="form-control" ngModel id="lastName2" name="lastName2" #lastName2="ngModel" type="text" placeholder="Segundo apellido" maxlength="20"/>
+                            <!--<input required class="form-control" ngModel id="lastName2" name="lastName2" #lastName2="ngModel" type="text" placeholder="Segundo apellido" maxlength="20"/> -->
                             <div class="alert alert-danger" *ngIf="lastName2.touched && !lastName2.valid">
                                 Debe ingresar un apellido válido.
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="inputName">Identification</label>
                             <input required class="form-control" type="number" placeholder="Cédula" pattern="[0-9]{9}"/>
-                            <!--<input required class="form-control" ngModel id="id" name="id" #id="ngModel" type="number" placeholder="Cédula" pattern="[0-9]{9}"/>
+                            <!--<input required class="form-control" ngModel id="id" name="id" #id="ngModel" type="number" placeholder="Cédula" pattern="[0-9]{9}"/> -->
                             <div class="alert alert-danger" *ngIf="id.touched && !id.valid">
                                 Debe ingresar una cédula válida.
                             </div>
                             <div class="alert alert-danger" *ngIf="id.touched && keyConstraint(id.control?.value)">
                                 La cédula ya existe.
-                            </div> -->
+                            </div>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputName">Payment</label>
                             <input required class="form-control" type="number" placeholder="Pago"/>
-                            <!--<input required class="form-control" ngModel id="payment" name="payment" #payment="ngModel" type="number" placeholder="Pago"/>
+                            <!--<input required class="form-control" ngModel id="payment" name="payment" #payment="ngModel" type="number" placeholder="Pago"/> -->
                             <div class="alert alert-danger" *ngIf="payment.touched && !payment.valid">
                                 Debe ingresar una pago válido.
-                            </div> -->
+                            </div>
                         </div>
                         <div class="form-group col-md-4">
                             <label for="inputPhone">Phone</label>
                             <input required class="form-control" type="number" placeholder="Teléfono" pattern="[0-9]{8}"/>
-                            <!--<input required class="form-control" ngModel id="phone" name="phone" #phone="ngModel" type="number" placeholder="Teléfono" pattern="[0-9]{8}"/>
+                            <!--<input required class="form-control" ngModel id="phone" name="phone" #phone="ngModel" type="number" placeholder="Teléfono" pattern="[0-9]{8}"/> -->
                             <div class="alert alert-danger" *ngIf="phone.touched && !phone.valid">
                                 Debe ingresar un teléfono válido.
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                 </form>

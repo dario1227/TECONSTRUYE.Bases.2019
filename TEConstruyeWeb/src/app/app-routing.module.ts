@@ -4,8 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-//import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
-//import { RxReactiveFormsModule } from "@rxweb/reactive-form-validators";
+import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
+import { RxReactiveFormsModule } from "@rxweb/reactive-form-validators";
 
 import { AssignmenthoursComponent } from './assignmenthours/assignmenthours.component';
 import { AssignmentmaterialComponent } from './assignmentmaterial/assignmentmaterial.component';
@@ -22,6 +22,7 @@ import { RegistermaterialComponent } from './registermaterial/registermaterial.c
 import { RegisterstagesComponent } from './registerstages/registerstages.component';
 import { ReportexpenseComponent } from './reportexpense/reportexpense.component';
 import { ReportstatusComponent } from './reportstatus/reportstatus.component';
+import { StagesComponent } from './stages/stages.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { WelcomeadminComponent } from './welcomeadmin/welcomeadmin.component';
 import { WelcomeeaComponent } from './welcomeea/welcomeea.component';
@@ -46,6 +47,7 @@ const routes: Routes = [
   { path: 'registerstages', component: RegisterstagesComponent },
   { path: 'reportexpense', component: ReportexpenseComponent },
   { path: 'reportstatus', component: ReportstatusComponent },
+  { path: 'stages', component: StagesComponent },
   { path: 'welcomeadmin', component: WelcomeadminComponent },
   { path: 'welcomeea', component: WelcomeeaComponent },
   { path: 'workrecord', component: WorkrecordComponent }

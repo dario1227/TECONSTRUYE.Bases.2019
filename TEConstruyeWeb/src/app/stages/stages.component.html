@@ -1,0 +1,38 @@
+<app-welcomeea></app-welcomeea>
+
+<div class="form-group">
+    <label class="col-md-4 control-label col-xs-12" for="Direccion">Localización</label>
+    
+    <!-- Lista de Provincias-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="Prov">Provincia</label>  
+      <div class="col-md-4">
+        <select class="form-control">
+            <option *ngFor="let Provincia of serviceLocation.provinciaList" (click)="loadCantones(Provincia)">{{Provincia}}
+            </option>
+          </select>
+      </div>
+    </div>
+
+    <!--Lista de Cantones-->            
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="Cant">Canton</label>  
+      <div class="col-md-4">
+        <select class="form-control">
+          <option *ngFor="let Canton of serviceLocation.cantonList" (click)="loadDistritos(Canton)">{{Canton}}
+          </option>
+        </select>
+      </div>
+    </div>
+    
+    <!-- Lista de Distritos-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="Dist">Distrito</label>
+      <div class="col-md-4">
+        <select class="form-control">
+          <option *ngFor="let Distrito of serviceLocation.distritoList" (click)="selectDistrito(Distrito)">{{Distrito}}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>

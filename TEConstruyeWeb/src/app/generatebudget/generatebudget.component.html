@@ -1,1 +1,32 @@
 <app-welcomeadmin></app-welcomeadmin>
+
+<div class="container mt-3">
+    <h1 class="display-4 text-center">Generación de prespuesto</h1>
+</div>
+
+<div class="container mt-3"></div>
+
+<!-- Tabla -->
+<div class="container mt-3 mb-2">
+    <table class="table table-hover">
+        <caption>
+            Total: {{ currency(obtenerMontoTotal(preciosEtapasProyecto)) }}
+        </caption>
+        <thead>
+            <tr>
+                <th scope="col">Etapa</th>
+                <th scope="col">Costo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let etapa of preciosEtapasProyecto">
+                <th scope="row" class="align-middle">
+                    {{ etapa.nombre }}
+                </th>
+                <th scope="row" class="align-middle">
+                    {{ currency(etapa.presupuesto) }}
+                </th>
+            </tr>
+        </tbody>
+    </table>
+</div>

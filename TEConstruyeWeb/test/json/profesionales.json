@@ -1,0 +1,28 @@
+[{
+    "Nombre": "Eduardo",
+    "PrimerApellido": "Moya",
+    "SegundoApellido": "Bello",
+    "Cedula": 102340567,
+    "Especialidad": "Eléctrico",
+    "Telefono": 87878733,
+    "Codigo": "EL12345"
+  },
+  {
+    "Nombre": "Pablo",
+    "PrimerApellido": "Mora",
+    "SegundoApellido": "Rivas",
+    "Cedula": 207650432,
+    "Especialidad": "Civil",
+    "Telefono": 78667654,
+    "Codigo": "CV55345"
+  },
+  {
+    "Nombre": "Isaac",
+    "PrimerApellido": "Porras",
+    "SegundoApellido": "",
+    "Cedula": 302370149,
+    "Especialidad": "Construcción",
+    "Telefono": 81234827,
+    "Codigo": "CO87365"
+  }
+]

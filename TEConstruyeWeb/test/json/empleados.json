@@ -1,0 +1,25 @@
+[{
+    "Nombre": "Bernardo",
+    "PrimerApellido": "Mora",
+    "SegundoApellido": "Díaz",
+    "Cedula": 105360738,
+    "Telefono": 70998866,
+    "Pago": 12000000
+  },
+  {
+    "Nombre": "Luisa",
+    "PrimerApellido": "Casanova",
+    "SegundoApellido": "Rivas",
+    "Cedula": 406620836,
+    "Telefono": 60990039,
+    "Pago": 10000000
+  },
+  {
+    "Nombre": "Marco",
+    "PrimerApellido": "Juárez",
+    "SegundoApellido": "Rivera",
+    "Cedula": 608830994,
+    "Telefono": 60998930,
+    "Pago": 15000000
+  }
+]

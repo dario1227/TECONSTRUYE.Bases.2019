@@ -1,0 +1,72 @@
+[{
+    "Semana": "Semana del 14-11-19",
+    "Empleados": [{
+        "Nombre": "Juan",
+        "PrimerApellido": "Hernández",
+        "Id": 101110111,
+        "Proyecto": "Casa en Jacó con acabados de lujo",
+        "ProyectoId": 1,
+        "Horas": 3,
+        "Pago": 10000
+      },
+      {
+        "Nombre": "Mariana",
+        "PrimerApellido": "Salvatierra",
+        "Id": 102220111,
+        "Proyecto": "Casa en residencial Las Brisas en Santa Ana",
+        "ProyectoId": 3,
+        "Horas": 6,
+        "Pago": 20000
+      },
+      {
+        "Nombre": "Alberto",
+        "PrimerApellido": "Jiménez",
+        "Id": 101110333,
+        "Proyecto": "Casa en residencial Los Altos en Barva",
+        "ProyectoId": 6,
+        "Horas": 12,
+        "Pago": 40000
+      }
+    ]
+  },
+  {
+    "Semana": "Semana del 21-11-19",
+    "Empleados": [{
+        "Nombre": "Bernardo",
+        "PrimerApellido": "Silva",
+        "Id": 104440111,
+        "Proyecto": "Casa en Jacó con acabados de lujo",
+        "ProyectoId": 11,
+        "Horas": 4,
+        "Pago": 8000
+      },
+      {
+        "Nombre": "Luis",
+        "PrimerApellido": "Molina",
+        "Id": 501110111,
+        "Proyecto": "Complejo de apartamentos Vida Libre",
+        "ProyectoId": 15,
+        "Horas": 9,
+        "Pago": 19000
+      },
+      {
+        "Nombre": "José Pablo",
+        "PrimerApellido": "Pereira",
+        "Id": 601110111,
+        "Proyecto": "Casa en residencial Las Brisas en Santa Ana",
+        "ProyectoId": 17,
+        "Horas": 20,
+        "Pago": 80000
+      },
+      {
+        "Nombre": "Arturo",
+        "PrimerApellido": "Quirós",
+        "Id": 101530111,
+        "Proyecto": "Casa en residencial Los Sueños en Puntarenas",
+        "ProyectoId": 122,
+        "Horas": 30,
+        "Pago": 1000
+      }
+    ]
+  }
+]

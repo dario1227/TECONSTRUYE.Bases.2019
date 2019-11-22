@@ -9,7 +9,7 @@
     <!-- Ecabezado de tabla -->
     <div class="row">
         <div class="col-md-12">
-            <nav class="navbar navbar-dark bg-primary">
+            <nav class="navbar navbar-light" style="background-color: #00C853;">
                 <a class="navbar-brand text-light">Tabla de etapas</a>
                 <form class="form-inline">
                     <button type="button" (click)="show = 'modal'" data-toggle="modal" data-target="#agregar" class="btn">
@@ -54,13 +54,13 @@
                         <div class="form-group col-md-12">
                             <label for="inputName">Stage name</label>
                             <input required class="form-control" type="text" placeholder="Nombre" maxlength="20"/>
-                            <!--<input required class="form-control" ngModel id="name" name="name" #name="ngModel" type="text" placeholder="Nombre" maxlength="20"/>
+                            <!--<input required class="form-control" ngModel id="name" name="name" #name="ngModel" type="text" placeholder="Nombre" maxlength="20"/> -->
                             <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
                                 Debe ingresar un nombre válido.
                             </div>
                             <div class="alert alert-danger" *ngIf="name.touched && keyConstraint(name.control?.value)">
                                 La etapa ya existe.
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                 </form>

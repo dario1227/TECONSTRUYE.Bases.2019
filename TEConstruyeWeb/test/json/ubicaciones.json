@@ -1,0 +1,58 @@
+[{
+    "Provincia": "San José",
+    "Cantones": [{
+        "Canton": "San José",
+        "Distritos": [{
+            "Distrito": "Merced"
+          },
+          {
+            "Distrito": "El Carmen"
+          },
+          {
+            "Distrito": "Hospital"
+          },
+          {
+            "Distrito": "Catedral"
+          }
+        ]
+      },
+      {
+        "Canton": "Escazú",
+        "Distritos": [{
+            "Distrito": "Escazú"
+          },
+          {
+            "Distrito": "San Rafael"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Provincia": "Alajuela",
+    "Cantones": [{
+        "Canton": "Alajuela",
+        "Distritos": [{
+            "Distrito": "Alajuela"
+          },
+          {
+            "Distrito": "Guácima"
+          },
+          {
+            "Distrito": "San Isidro"
+          }
+        ]
+      },
+      {
+        "Canton": "San Ramón",
+        "Distritos": [{
+            "Distrito": "San Juan"
+          },
+          {
+            "Distrito": "San Ramón"
+          }
+        ]
+      }
+    ]
+  }
+]

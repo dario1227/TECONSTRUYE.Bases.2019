@@ -1,0 +1,25 @@
+[{
+    "Nombre": "Fulanito",
+    "Apellido": "Martínez",
+    "Cedula": "203330333",
+    "Horas": 12
+  },
+  {
+    "Nombre": "Menganito",
+    "Apellido": "Herrera",
+    "Cedula": "103330363",
+    "Horas": 11
+  },
+  {
+    "Nombre": "María",
+    "Apellido": "Jackson",
+    "Cedula": "402280339",
+    "Horas": 18
+  },
+  {
+    "Nombre": "Pamela",
+    "Apellido": "Chu",
+    "Cedula": "102220472",
+    "Horas": 21
+  }
+]

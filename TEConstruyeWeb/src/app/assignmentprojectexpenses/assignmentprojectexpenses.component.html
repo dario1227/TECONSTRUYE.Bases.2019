@@ -1,1 +1,110 @@
 <app-welcomeadmin></app-welcomeadmin>
+
+<div class="container mt-3 mb-3">
+    <h1 class="display-4 text-center" *ngIf="!selected">
+        Project Expenses
+    </h1>
+</div>
+      
+<div class="container d-print-none mb-3">
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button"data-toggle="modal" data-target="#agregar" class="btn btn-success btn-lg btn-block">
+                Assign expenses to a project
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-3 mb-2" *ngIf="!selected">
+    <div class="row mt-3" *ngFor="let gasto of gastos">
+        <div class="col-md-12 mt-3">
+            <h3>
+                {{ "Compra #" + gasto.numerofactura }}
+            </h3>
+        </div>
+        <div class="col-md-12">
+            <h5>{{ "Proveedor: " + gasto.proveedor }}</h5>
+        </div>
+        <div class="col-md-12">
+            <h5>{{ "Material comprado: " + gasto.material }}</h5>
+        </div>
+        <div class="col-md-6">
+            <h5>Foto de la factura:</h5>
+            <img src="{{ gasto.foto }}" class="img-thumbnail" height="200px" />
+        </div>
+    </div>
+</div>
+
+<!-- Agregar gasto -->
+<div class="modal fade" data-keyboard="false" data-backdrop="static" id="agregar" tabindex="-1" role="dialog" aria-labelledby="agregarLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="agregarLabel">
+                    Assign expenses to a project
+                </h5>
+            </div>
+            <div class="modal-body">
+                <!--<form [formGroup]="gastosForm">
+                    Value : {{ gastosForm.value | json }}
+                    <hr /> -->
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="inputName">Bill number</label>
+                            <input class="form-control" type="number" placeholder="Numero" formControlName="Numero"/>
+                            <div class="alert alert-danger" *ngIf="Numero.touched && !Numero.valid">
+                                Debe ingresar un número de factura válido.
+                            </div>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="inputName">Supplier</label>
+                            <input class="form-control" type="text" placeholder="Proveedor" formControlName="Proveedor"/>
+                            <div class="alert alert-danger" *ngIf="Proveedor.touched && !Proveedor.valid">
+                                Debe ingresar un proveedor.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <label for="inputName">Material</label>
+                            <select class="form-control" placeholder="Material" formControlName="Material">
+                                <option></option>
+                                <option *ngFor="let material of materiales">
+                                    {{ material.nombre }}
+                                </option>
+                            </select>
+                            <div class="alert alert-danger" *ngIf="Material.touched && !Material.valid">
+                                Debe ingresar un material.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="Foto" placeholder="Foto" formControlName="Foto" accept=".jpg,.png,.svg" (change)="onFileChange($event)"/>
+                                <label class="custom-file-label" for="Foto"
+                                >Adjunte una fotografía válida de la factura</label>
+                            </div>
+                            <div *ngIf="filesSelected">
+                                <h5>Upload progress</h5>
+                                <pre>{{ uploadProgress$ | async | json }}</pre>
+                            </div>
+                            <div class="alert alert-danger" *ngIf="Foto.touched && !Foto.valid">
+                                Debe ingresar una fotografía.
+                            </div>
+                        </div>
+                    </div>
+                <!--</form> -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-success" (click)="submit()" [disabled]="!gastosForm.valid">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
