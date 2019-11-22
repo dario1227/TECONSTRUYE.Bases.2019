@@ -1,0 +1,76 @@
+[{
+    "Id": 1,
+    "Nombre": "Casa con vista al mar",
+    "Provincia": "PUNTARENAS",
+    "Canton": "PUNTARENAS",
+    "Distrito": "PUNTARENAS",
+    "Habitaciones": 3,
+    "Banos": 2,
+    "Niveles": 2,
+    "MetrosConstruccion": 150,
+    "MetrosPropiedad": 200,
+    "NombreCliente": "Pedro",
+    "ApellidoCliente": "Perico",
+    "Encargados": [{
+        "Nombre": "Eduardo",
+        "Apellido": "Moya",
+        "Especialidad": "Eléctrico"
+      },
+      {
+        "Nombre": "Pablo",
+        "Apellido": "Mora",
+        "Especialidad": "Civil"
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "Nombre": "Casa familiar en la montaña",
+    "Provincia": "SAN JOSÉ",
+    "Canton": "ESCAZÚ",
+    "Distrito": "ESCAZÚ",
+    "Habitaciones": 3,
+    "Banos": 2,
+    "Niveles": 2,
+    "MetrosConstruccion": 150,
+    "MetrosPropiedad": 200,
+    "NombreCliente": "Ramiro",
+    "ApellidoCliente": "Ramírez",
+    "Encargados": [{
+        "Nombre": "Eduardo",
+        "Apellido": "Moya",
+        "Especialidad": "Eléctrico"
+      },
+      {
+        "Nombre": "Isaac",
+        "Apellido": "Porras",
+        "Especialidad": "Construcción"
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "Nombre": "Casa contemporánea en La Unión de Cartago",
+    "Provincia": "CARTAGO",
+    "Canton": "LA UNIÓN",
+    "Distrito": "SAN RAFAEL",
+    "Habitaciones": 3,
+    "Banos": 2,
+    "Niveles": 2,
+    "MetrosConstruccion": 150,
+    "MetrosPropiedad": 200,
+    "NombreCliente": "Juan",
+    "ApellidoCliente": "López",
+    "Encargados": [{
+        "Nombre": "Eduardo",
+        "Apellido": "Moya",
+        "Especialidad": "Eléctrico"
+      },
+      {
+        "Nombre": "Isaac",
+        "Apellido": "Porras",
+        "Especialidad": "Construcción"
+      }
+    ]
+  }
+]

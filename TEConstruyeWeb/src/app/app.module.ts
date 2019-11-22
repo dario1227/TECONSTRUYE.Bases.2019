@@ -1,5 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
+import { RxReactiveFormsModule } from "@rxweb/reactive-form-validators";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +26,7 @@ import { GeneratebudgetComponent } from './generatebudget/generatebudget.compone
 import { GeneratepayrollComponent } from './generatepayroll/generatepayroll.component';
 import { ReportexpenseComponent } from './reportexpense/reportexpense.component';
 import { ReportstatusComponent } from './reportstatus/reportstatus.component';
+import { StagesComponent } from './stages/stages.component';
 
 @NgModule({
   declarations: [
@@ -45,12 +50,18 @@ import { ReportstatusComponent } from './reportstatus/reportstatus.component';
     GeneratepayrollComponent,
     ReportexpenseComponent,
     ReportstatusComponent,
+    StagesComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RxReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

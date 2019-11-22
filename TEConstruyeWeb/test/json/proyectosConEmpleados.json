@@ -1,0 +1,30 @@
+[{
+    "Proyecto": "Casa contemporanea",
+    "Empleados": [{
+        "Nombre": "Juan",
+        "PrimerApellido": "López"
+      },
+      {
+        "Nombre": "Ricardo",
+        "PrimerApellido": "Méndez"
+      },
+      {
+        "Nombre": "Laura",
+        "PrimerApellido": "Flores"
+      }
+    ]
+  },
+  {
+    "Proyecto": "Casa rústica en la montaña",
+    "Empleados": [{
+      "Nombre": "Jaimito",
+      "PrimerApellido": "Jiménez"
+    }, {
+      "Nombre": "Alfredo",
+      "PrimerApellido": "Quirós"
+    }, {
+      "Nombre": "Pedro",
+      "PrimerApellido": "Jackson"
+    }]
+  }
+]

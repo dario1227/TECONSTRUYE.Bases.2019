@@ -1,1 +1,60 @@
 <app-welcomeadmin></app-welcomeadmin>
+
+<div class="container mt-3">
+    <h1 class="display-4 text-center">Generate payroll</h1>
+</div>
+
+<div class="container mt-3"></div>
+
+<div class="container d-print-none mb-3">
+    <div class="row">
+        <div class="col-md-12">
+            <button type="button" data-toggle="modal" data-target="#agregar" class="btn btn-success btn-lg btn-block">
+                Generar report
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- Tabla -->
+<div class="container mt-3 mb-2">
+    <div class="row mt-3" *ngFor="let semana of planilla">
+        <h3>{{ semana.Semana }}</h3>
+        <div class="col-md-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Employee</th>
+                        <th scope="col">Identification</th>
+                        <th scope="col">Project</th>
+                        <th scope="col">Project ID</th>
+                        <th scope="col">Hours</th>
+                        <th scope="col">Payment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let empleado of semana.Empleados">
+                        <th scope="row" class="align-middle">
+                            {{ empleado.Nombre + " " + empleado.PrimerApellido }}
+                        </th>
+                        <th scope="row" class="align-middle">
+                            {{ empleado.Id }}
+                        </th>
+                        <th scope="row" class="align-middle">
+                            {{ empleado.Proyecto }}
+                        </th>
+                        <th scope="row" class="align-middle">
+                            {{ empleado.ProyectoId }}
+                        </th>
+                        <th scope="row" class="align-middle">
+                            {{ empleado.Horas }}
+                        </th>
+                        <th scope="row" class="align-middle">
+                            {{ currency(empleado.Pago) }}
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

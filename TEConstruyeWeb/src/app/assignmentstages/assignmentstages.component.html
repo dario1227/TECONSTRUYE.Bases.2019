@@ -8,7 +8,7 @@
     <!-- Ecabezado de tabla -->
     <div class="row">
         <div class="col-md-12">
-            <nav class="navbar navbar-dark bg-primary">
+            <nav class="navbar navbar-light" style="background-color: #00C853;">
                 <a class="navbar-brand text-light">Tabla de etapas de proyecto</a>
                 <form class="form-inline">
                     <button type="button" (click)="show = 'modal'" data-toggle="modal" data-target="#agregar" class="btn">
@@ -64,13 +64,13 @@
                             <label for="inputName">Stage</label>
                             <select class="form-control" placeholder="Etapa" formControlName="Etapa">
                                 <option></option>
-                                <!--<option *ngFor="let etapaNombre of etapasNombres">
+                                <option *ngFor="let etapaNombre of etapasNombres">
                                     {{ etapaNombre.nombre }}
-                                </option> -->
+                                </option>
                             </select>
-                            <!--<div class="alert alert-danger" *ngIf="Etapa.touched && !Etapa.valid">
+                            <div class="alert alert-danger" *ngIf="Etapa.touched && !Etapa.valid">
                                 Debe ingresar una etapa.
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                 <!--</form>-->
@@ -78,16 +78,16 @@
                     <div class="form-group col-md-6">
                         <label for="inputName">Start date</label>
                         <input class="form-control" type="date" placeholder="FechaInicio" formControlName="FechaInicio"/>
-                        <!--<div class="alert alert-danger" *ngIf="FechaInicio.touched && !FechaInicio.valid">
+                        <div class="alert alert-danger" *ngIf="FechaInicio.touched && !FechaInicio.valid">
                             Debe ingresar una fecha de inicio.
-                        </div> -->
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputName">Finish date</label>
                         <input class="form-control" type="date" placeholder="FechaFin" formControlName="FechaFin"/>
-                        <!--<div class="alert alert-danger" *ngIf="FechaFin.touched && !FechaFin.valid">
+                        <div class="alert alert-danger" *ngIf="FechaFin.touched && !FechaFin.valid">
                             Debe ingresar una fecha de finalización.
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>

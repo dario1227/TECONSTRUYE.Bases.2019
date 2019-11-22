@@ -1,0 +1,52 @@
+[{
+    "Semana": "Semana del 14-11-19",
+    "Gastos": [{
+        "Gasto": "Gasto 1, Semana del 14-11-19",
+        "Monto": 12345
+      },
+      {
+        "Gasto": "Gasto 2, Semana del 14-11-19",
+        "Monto": 77652
+      },
+      {
+        "Gasto": "Gasto 3, Semana del 14-11-19",
+        "Monto": 33000
+      }
+    ],
+    "MontoTotal": 10390
+  },
+  {
+    "Semana": "Semana del 21-11-19",
+    "Gastos": [{
+        "Gasto": "Gasto 1, Semana del 21-11-19",
+        "Monto": 34563
+      },
+      {
+        "Gasto": "Gasto 2, Semana del 21-11-19",
+        "Monto": 12346
+      },
+      {
+        "Gasto": "Gasto 3, Semana del 21-11-19",
+        "Monto": 90834
+      }
+    ],
+    "MontoTotal": 234592
+  },
+  {
+    "Semana": "Semana del 28-11-19",
+    "Gastos": [{
+        "Gasto": "Gasto 1, Semana del 28-11-19",
+        "Monto": 74525
+      },
+      {
+        "Gasto": "Gasto 2, Semana del 28-11-19",
+        "Monto": 33362
+      },
+      {
+        "Gasto": "Gasto 3, Semana del 28-11-19",
+        "Monto": 11927
+      }
+    ],
+    "MontoTotal": 555743
+  }
+]

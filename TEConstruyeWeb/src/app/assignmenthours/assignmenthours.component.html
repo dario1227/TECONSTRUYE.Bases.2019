@@ -1,1 +1,92 @@
 <app-welcomeadmin></app-welcomeadmin>
+
+<div class="container mt-3">
+    <h1 class="display-4 text-center">Assignment of Hours</h1>
+</div>
+
+<div class="container mt-3">
+    <!-- Ecabezado de tabla -->
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-light" style="background-color: #00C853;">
+                <a class="navbar-brand text-light">Tabla de horas de empleados</a>
+                <form class="form-inline">
+                    <button type="button" (click)="show = 'modal'" data-toggle="modal" data-target="#agregar" class="btn">
+                        <img src="https://image.flaticon.com/icons/svg/148/148764.svg" alt="add-button" width="30"/>
+                    </button>
+                </form>
+            </nav>
+        </div>
+    </div>
+    <!-- Tabla -->
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Employee</th>
+                        <th scope="col">Identification</th>
+                        <th scope="col">Hours</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let horasEmpleado of horasEmpleados">
+                        <th scope="row" class="align-middle">
+                            {{ horasEmpleado.nombre + ' ' + horasEmpleado.primerapellido +   ' ' + horasEmpleado.segundoapellido}}
+                        </th>
+                        <th scope="row" class="align-middle">
+                            {{ horasEmpleado.cedula }}
+                        </th>
+                        <th scope="row" class="align-middle">{{ horasEmpleado.horas }}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Agregar profesional-->
+<div class="modal fade" data-keyboard="false" data-backdrop="static" id="agregar" tabindex="-1" role="dialog" aria-labelledby="agregarLabel1" aria-hidden="true" *ngIf="show == 'modal'">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="agregarLabel">Add hours</h5>
+            </div>
+            <div class="modal-body">
+                <!--<form [formGroup]="horasForm">
+                    Value : {{ horasForm.value | json }}
+                    <hr /> -->
+                    <div class="form-row">
+                        <div class="form-group col-md-8">
+                            <label for="inputName">Employee</label>
+                            <select class="form-control" placeholder="Empleado" formControlName="Cedula">
+                                <option></option>
+                                <option *ngFor="let empleado of totalEmpleados" [value]="empleado.cedula">
+                                    {{ empleado.nombre + ' ' + empleado.primerapellido + ' (' + empleado.cedula + ')'}}
+                                </option>
+                            </select>
+                            <div class="alert alert-danger" *ngIf="Cedula.touched && !Cedula.valid">
+                                Debe seleccionar un empleado.
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputName">Hours</label>
+                            <input type="number" class="form-control" placeholder="Horas" formControlName="Horas"/>
+                            <div class="alert alert-danger" *ngIf="Horas.touched && !Horas.valid">
+                                Debe ingresar una cantidad válida.
+                            </div>
+                        </div>
+                    </div>
+                <!--</form> -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="close()">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-success" (click)="submit()" [disabled]="!horasForm.valid">
+                        Save
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

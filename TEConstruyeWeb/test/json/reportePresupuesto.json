@@ -1,0 +1,55 @@
+[{
+    "Proyecto": "Hermosa casa con vista al mar en Quepos",
+    "ProyectoId": 1,
+    "Etapas": [{
+        "Etapa": "Etapa 1, proyecto 1",
+        "Costo": 12345
+      },
+      {
+        "Etapa": "Etapa 2, proyecto 1",
+        "Costo": 77652
+      },
+      {
+        "Etapa": "Etapa 3, proyecto 1",
+        "Costo": 33000
+      }
+    ],
+    "CostoTotal": 10390
+  },
+  {
+    "Proyecto": "Casa residencial en condominio Palo Verde",
+    "ProyectoId": 2,
+    "Etapas": [{
+        "Etapa": "Etapa 1, proyecto 2",
+        "Costo": 34563
+      },
+      {
+        "Etapa": "Etapa 2, proyecto 2",
+        "Costo": 12346
+      },
+      {
+        "Etapa": "Etapa 3, proyecto 2",
+        "Costo": 90834
+      }
+    ],
+    "CostoTotal": 234592
+  },
+  {
+    "Proyecto": "Apartamentos Nueva Vida en La Sabana",
+    "ProyectoId": 3,
+    "Etapas": [{
+        "Etapa": "Etapa 1, proyecto 3",
+        "Costo": 74525
+      },
+      {
+        "Etapa": "Etapa 2, proyecto 3",
+        "Costo": 33362
+      },
+      {
+        "Etapa": "Etapa 3, proyecto 3",
+        "Costo": 11927
+      }
+    ],
+    "CostoTotal": 555743
+  }
+]

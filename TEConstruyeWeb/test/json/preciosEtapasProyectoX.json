@@ -1,0 +1,16 @@
+[{
+  "PrecioTotal": 1920000,
+  "Etapas": [{
+      "Etapa": "Cimientos",
+      "Costo": 300000
+    },
+    {
+      "Etapa": "Paredes",
+      "Costo": 450000
+    },
+    {
+      "Etapa": "Techos",
+      "Costo": 200000
+    }
+  ]
+}]

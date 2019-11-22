@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-assignmentstages',
@@ -7,6 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AssignmentstagesComponent implements OnInit {
 
+  etapasForm: FormGroup; // Formulario de Angular
+
+  @Input() selectedProjectId; // Identificador del proyecto seleccionado
+  etapasNombres; // Nombres de etapas
+  etapasProyecto; // Etapas del proyecto seleccionado
+  
   constructor() { }
 
   ngOnInit() {
