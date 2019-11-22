@@ -1,7 +1,7 @@
 CREATE TABLE Engineers(
+	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
 	Name Varchar(50),
 	Phone INT,
-	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
 	Specialty INT,
 	Identification INT ,
 	PRIMARY KEY (ID)
@@ -12,25 +12,27 @@ CREATE TABLE Specialties(
 	UNIQUE(ID)
 )
 CREATE TABLE Clients(
+	UserName VarChar(50) NOT NULL,
 	Name VarChar(50),
 	Phone INT,
 	Identification INT NOT NULL,
-	UserName VarChar(50) NOT NULL,
 	UNIQUE(UserName),
 	PRIMARY KEY(UserName)
 )
 CREATE TABLE Employees(
+	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
 	Name Varchar(50),
 	Identification INT NOT NULL,
 	Phone INT,
 	HourPrice INT,
-	Proyect INT,
-	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
+	Hours INT,
+	Proyectid INT,
+	Project TEXT,
 	PRIMARY KEY (ID)
 )
 CREATE TABLE Materials(
-	Name Varchar(50),
 	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL ,
+	Name Varchar(50),
 	UnitPrice INT,
 	PRIMARY KEY(ID)
 )
@@ -41,22 +43,22 @@ CREATE TABLE Stages(
 	PRIMARY KEY (ID)
 )
 CREATE TABLE Builds(
+	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL ,
 	Name VARCHAR(50),
 	location INT,
 	Rooms INT,
-	Bathroms INT,
+	Bathrooms INT,
 	Floor INT,
 	GroundSize INT,
 	BuildSize INT,
 	Owner VARCHAR(50),
 	Proyect INT,
-	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL ,
-	Materials INT,
+	proyectname TEXT,
 	PRIMARY KEY(ID)
 )
 CREATE TABLE Projects(
 	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
-	Employee INT,
+	name TEXT,
 	Hours INT,
 	StageID INT,
 	Stage VARCHAR(50),
@@ -65,14 +67,16 @@ CREATE TABLE Projects(
 	PRIMARY KEY(ID)
 )
 
-CREATE TABLE MaterialRegistrys(
+CREATE TABLE MaterialRegistries(
+	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
 	Price INT,
 	Quantity INT,
 	Material INT,
 	Build INT,
+	BuildName TEXT,
 	Name VARCHAR(50),
+	total INT,
 	Stage INT,
-	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
 	Primary KEY (ID)
 )
 CREATE TABLE Bills(
@@ -86,9 +90,9 @@ CREATE TABLE Bills(
 )
 
 CREATE TABLE Locations(
-	Province VARCHAR(50),
-	District VARCHAR(50),
-	Canton VARCHAR(50),
 	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
+	Province VARCHAR(50),
+	Canton VARCHAR(50),
+	District VARCHAR(50),
 	PRIMARY KEY (ID)
 )

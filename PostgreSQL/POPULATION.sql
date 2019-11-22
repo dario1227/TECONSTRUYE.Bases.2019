@@ -1,4 +1,4 @@
-INSERT INTO location (Province,Canton,District)
+INSERT INTO locations (Province,Canton,District)
 VALUES
  ('San Jose','San Jose','Carmen'),
  ('San Jose','San Jose','Merced'),
@@ -487,13 +487,18 @@ VALUES
  ('Limon','Guacimo','Rio Jimenez'),
  ('Limon','Guacimo','Duacari');
  
- INSERT INTO specialty(Description)
+ INSERT INTO specialties(Description)
  VALUES
  ('Electic'),
  ('Civil'),
  ('Construction');
  
- INSERT INTO stage(Description)
+ INSERT INTO clients(name,phone,identification,username)
+ VALUES('miguel',88997766,1122314543,'miguelito'),
+ ('migueli',88997766,1122314543,'miguelito12'),
+ ('Eduardo',88997766,1122389543,'miguelitox');
+ 
+ INSERT INTO stages(Description)
  VALUES
  ('Trabajo Preeliminar'),
  ('Cimientos'),
@@ -515,3 +520,4 @@ VALUES
  ('Mueble Cocina'),
  ('Pintura'),
  ('Escaleras');
+ 

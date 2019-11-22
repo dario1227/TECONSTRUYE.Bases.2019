@@ -39,3 +39,11 @@ export async function getprice(rep,res){
         data : materials
     });
  }
+ export async function getjustmaterial(rep,res){
+    const materials=await Material.findOne({
+        attributes:[[Sequelize.fn('DISTINCT', Sequelize.col('name')) ,'name']],
+ });
+    res.json({
+        data : materials
+    });
+ }

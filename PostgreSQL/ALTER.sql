@@ -1,35 +1,28 @@
-ALTER TABLE engineer
-ADD FOREIGN KEY(ID) REFERENCES employee(ID)/////
+ALTER TABLE engineers
+ADD FOREIGN KEY(specialty) REFERENCES specialties(ID)
 
-ALTER TABLE engineer
-ADD FOREIGN KEY(specialty) REFERENCES specialty(ID)
+ALTER TABLE employees
+ADD FOREIGN KEY(proyectid) REFERENCES projects(ID)
 
-ALTER TABLE build
-ADD FOREIGN KEY(Owner) REFERENCES client(Username)////
+ALTER TABLE Builds
+ADD FOREIGN KEY(location) REFERENCES locations(ID)
 
-ALTER TABLE build
-ADD FOREIGN KEY(Proyect) REFERENCES proyect(ID)//////
+ALTER TABLE Builds
+ADD FOREIGN KEY(Owner) REFERENCES clients(Username)
 
-ALTER TABLE Proyect
-ADD FOREIGN KEY(Employee) REFERENCES employee(ID)////
+ALTER TABLE Builds
+ADD FOREIGN KEY(proyect) REFERENCES projects(id)
 
-ALTER TABLE Proyect
-ADD FOREIGN KEY(StageID) REFERENCES stage(ID)
+ALTER TABLE projects
+ADD FOREIGN KEY(stageid) REFERENCES stages(id)
 
-ALTER TABLE materialregistry
-ADD FOREIGN KEY(Material) REFERENCES materials(ID)/////
+ALTER TABLE materialregistries
+ADD FOREIGN KEY(material) REFERENCES materials(id)
 
-ALTER TABLE materialregistry
-ADD FOREIGN KEY(Stage) REFERENCES stage(ID)///////7
+ALTER TABLE materialregistries
+ADD FOREIGN KEY(Build) REFERENCES builds(id)
 
-ALTER TABLE materialregistry
-ADD FOREIGN KEY(Build) REFERENCES build(ID)///////
+ALTER TABLE materialregistries
+ADD FOREIGN KEY(stage) REFERENCES stages(id)
 
-ALTER TABLE build
-ADD FOREIGN KEY(materials) REFERENCES materialregistry(ID)
 
-ALTER TABLE bills
-ADD FOREIGN KEY(Proyect) REFERENCES proyect(ID)/////////
-
-ALTER TABLE build
-ADD FOREIGN KEY(Location) REFERENCES Location(ID)//////
