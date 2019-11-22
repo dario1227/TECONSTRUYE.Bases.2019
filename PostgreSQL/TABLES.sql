@@ -1,4 +1,4 @@
-CREATE TABLE Engineer(
+CREATE TABLE Engineers(
 	Name Varchar(50),
 	Phone INT,
 	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
@@ -6,12 +6,12 @@ CREATE TABLE Engineer(
 	Identification INT ,
 	PRIMARY KEY (ID)
 )
-CREATE TABLE Specialty(
+CREATE TABLE Specialties(
 	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
 	Description VARCHAR(50),
 	UNIQUE(ID)
 )
-CREATE TABLE Client(
+CREATE TABLE Clients(
 	Name VarChar(50),
 	Phone INT,
 	Identification INT NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE Client(
 	UNIQUE(UserName),
 	PRIMARY KEY(UserName)
 )
-CREATE TABLE Employee(
+CREATE TABLE Employees(
 	Name Varchar(50),
 	Identification INT NOT NULL,
 	Phone INT,
@@ -35,12 +35,12 @@ CREATE TABLE Materials(
 	PRIMARY KEY(ID)
 )
 
-CREATE TABLE Stage(
+CREATE TABLE Stages(
 	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
 	Description VARCHAR(50),
 	PRIMARY KEY (ID)
 )
-CREATE TABLE Build(
+CREATE TABLE Builds(
 	Name VARCHAR(50),
 	location INT,
 	Rooms INT,
@@ -54,7 +54,7 @@ CREATE TABLE Build(
 	Materials INT,
 	PRIMARY KEY(ID)
 )
-CREATE TABLE Proyect(
+CREATE TABLE Projects(
 	ID INT GENERATED ALWAYS AS IDENTITY NOT NULL,
 	Employee INT,
 	Hours INT,
@@ -65,7 +65,7 @@ CREATE TABLE Proyect(
 	PRIMARY KEY(ID)
 )
 
-CREATE TABLE MaterialRegistry(
+CREATE TABLE MaterialRegistrys(
 	Price INT,
 	Quantity INT,
 	Material INT,
@@ -85,7 +85,7 @@ CREATE TABLE Bills(
 	PRIMARY KEY(Number)
 )
 
-CREATE TABLE Location(
+CREATE TABLE Locations(
 	Province VARCHAR(50),
 	District VARCHAR(50),
 	Canton VARCHAR(50),

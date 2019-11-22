@@ -34,6 +34,14 @@ RETURN result;
 END;
 $result$ LANGUAGE plpgsql
 
+CREATE FUNCTION Getspecialty(name VARCHAR(50))RETURNS INT AS $result$
+DECLARE result INT;
+BEGIN 
+SELECT id into result FROM specialties WHERE description=name;
+RETURN result;
+END;
+$result$ LANGUAGE plpgsql
+
 CREATE PROCEDURE PutMaterial(
 nameM varchar(50),
 Stage VARCHAR (50),
